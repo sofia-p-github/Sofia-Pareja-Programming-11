@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="500.0" prefWidth="700.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gameofchance.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Label prefHeight="17.0" prefWidth="92.0" text="Current Points:" />
+         <Label fx:id="labelCurrentPoints" text="100" />
+      </children>
+   </HBox>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Label prefHeight="17.0" prefWidth="106.0" text="First Dice Score:" />
+         <Button fx:id="btnDice1" alignment="CENTER" mnemonicParsing="false" onAction="#rollFirstDice" prefHeight="25.0" prefWidth="113.0" text="Roll First Dice" />
+      </children>
+   </HBox>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Label text="Dice Outcome: ">
+            <padding>
+               <Insets left="15.0" />
+            </padding>
+         </Label>
+         <Label fx:id="labelDice1" text=" ">
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </Label>
+      </children>
+   </HBox>
+   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Label text="How Much Will You Bet?" />
+         <TextField fx:id="textBet" disable="true" onAction="#getBet" onKeyPressed="#betTyped" prefHeight="25.0" prefWidth="55.0">
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin></TextField>
+         <VBox alignment="CENTER" prefHeight="36.0" prefWidth="300.0">
+            <children>
+               <Label fx:id="labelFixBet" prefHeight="17.0" prefWidth="300.0" text=" " textFill="RED" />
+               <Label fx:id="labelSecondLine" prefHeight="17.0" prefWidth="300.0" text=" " textFill="RED" />
+            </children>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <padding>
+               <Insets left="40.0" />
+            </padding>
+            <HBox.margin>
+               <Insets left="40.0" />
+            </HBox.margin>
+         </VBox>
+      </children>
+   </HBox>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="313.0">
+      <children>
+         <Label text="Your Bet: " />
+         <RadioButton fx:id="rbtnHigher" disable="true" mnemonicParsing="false" onAction="#betHigher" text="Higher">
+            <toggleGroup>
+               <ToggleGroup fx:id="bet" />
+            </toggleGroup>
+            <HBox.margin>
+               <Insets left="15.0" />
+            </HBox.margin>
+         </RadioButton>
+         <RadioButton fx:id="rbtnLower" disable="true" mnemonicParsing="false" onAction="#betLower" text="Lower" toggleGroup="$bet">
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin>
+         </RadioButton>
+      </children></HBox>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Label text="Second Dice Score: " />
+         <Button fx:id="btnDice2" disable="true" mnemonicParsing="false" onAction="#rollSecondDice" text="Roll Second Dice">
+            <HBox.margin>
+               <Insets left="10.0" />
+            </HBox.margin></Button>
+      </children>
+   </HBox>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Label text="Dice Outcome: " />
+         <Label fx:id="labelDice2" text=" ">
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin>
+         </Label>
+      </children>
+   </HBox>
+   <Label fx:id="labelOutcome" />
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Button fx:id="btnPlayAgain" mnemonicParsing="false" onAction="#playAgain" text="Play Again">
+            <HBox.margin>
+               <Insets left="15.0" />
+            </HBox.margin>
+         </Button>
+         <Button fx:id="btnResetGame" mnemonicParsing="false" onAction="#resetGame" text="Reset Game">
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin>
+         </Button>
+      </children>
+   </HBox>
+</VBox>
